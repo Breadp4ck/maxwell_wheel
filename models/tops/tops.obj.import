@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tops.obj-4cd91a1d0ff09f7db954e21241584e7f.mesh"
+
+[deps]
+
+files=[ "res://.import/tops.obj-4cd91a1d0ff09f7db954e21241584e7f.mesh" ]
+
+source_file="res://models/tops/tops.obj"
+dest_files=[ "res://.import/tops.obj-4cd91a1d0ff09f7db954e21241584e7f.mesh", "res://.import/tops.obj-4cd91a1d0ff09f7db954e21241584e7f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

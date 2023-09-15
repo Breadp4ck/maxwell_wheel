@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bulkhead.obj-e6ba0135fa15d80e5bab27abb5e2ab0b.mesh"
+
+[deps]
+
+files=[ "res://.import/bulkhead.obj-e6ba0135fa15d80e5bab27abb5e2ab0b.mesh" ]
+
+source_file="res://models/bulkhead/bulkhead.obj"
+dest_files=[ "res://.import/bulkhead.obj-e6ba0135fa15d80e5bab27abb5e2ab0b.mesh", "res://.import/bulkhead.obj-e6ba0135fa15d80e5bab27abb5e2ab0b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

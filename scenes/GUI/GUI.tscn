@@ -1,0 +1,711 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://themes/light-nstu.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/World/World.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui_elements/Option/Option.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui_elements/Output/Output.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GUI/Scripts/StopButton.gd" type="Script" id=5]
+[ext_resource path="res://scenes/GUI/Scripts/ReverseButton.gd" type="Script" id=6]
+[ext_resource path="res://scenes/GUI/Scripts/RunButton.gd" type="Script" id=7]
+[ext_resource path="res://scenes/GUI/Scripts/TimeSpeedSlider.gd" type="Script" id=8]
+[ext_resource path="res://scenes/GUI/Scripts/TimeSpeedKoef.gd" type="Script" id=9]
+[ext_resource path="res://scenes/GUI/Scripts/ModelRunOptions.gd" type="Script" id=10]
+[ext_resource path="res://scenes/GUI/Scripts/OutputValues.gd" type="Script" id=11]
+[ext_resource path="res://scenes/Plot/Plot.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/GUI/Scripts/TabsName.gd" type="Script" id=13]
+[ext_resource path="res://scenes/Manual/Manual.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/GUI/Scripts/LanguageButton.gd" type="Script" id=15]
+[ext_resource path="res://scenes/About/About.tscn" type="PackedScene" id=16]
+[ext_resource path="res://fonts/DeJaVuSans/DejaVuSans-Bold.ttf" type="DynamicFontData" id=17]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 17 )
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+margin_right = 1300.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+margin_right = 1300.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsButton" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer" groups=["translatable"]]
+margin_right = 105.0
+margin_bottom = 27.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "MANUAL_BTN"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+margin_left = 109.0
+margin_right = 113.0
+margin_bottom = 27.0
+
+[node name="LanguageButton" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer" groups=["translatable"]]
+margin_left = 117.0
+margin_right = 304.0
+margin_bottom = 27.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "CHANGE_LANGUAGE_BTN"
+script = ExtResource( 15 )
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+margin_left = 308.0
+margin_right = 312.0
+margin_bottom = 27.0
+
+[node name="InfoButton" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer" groups=["translatable"]]
+margin_left = 316.0
+margin_right = 408.0
+margin_bottom = 27.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "ABOUT_BTN"
+
+[node name="Main" type="Control" parent="VBoxContainer"]
+margin_top = 32.0
+margin_right = 1300.0
+margin_bottom = 796.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer/Main/HSplitContainer"]
+margin_right = 310.0
+margin_bottom = 754.0
+rect_min_size = Vector2( 310, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer"]
+margin_right = 310.0
+margin_bottom = 373.0
+rect_pivot_offset = Vector2( -403.303, -31 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer" groups=["translatable"]]
+margin_right = 310.0
+margin_bottom = 27.0
+text = "CALCULATED_VALUES"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer"]
+margin_top = 31.0
+margin_right = 310.0
+margin_bottom = 35.0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer"]
+margin_top = 39.0
+margin_right = 310.0
+margin_bottom = 373.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="OutputValues" type="VBoxContainer" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 309.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicEnergy" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 308.0
+margin_bottom = 25.0
+label = "KINEMATIC_ENERGY"
+suffix = "JOULES"
+
+[node name="PotentialEnergy" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 29.0
+margin_right = 308.0
+margin_bottom = 54.0
+label = "POTENTIAL_ENERGY"
+suffix = "JOULES"
+
+[node name="VerticalVelocity" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 58.0
+margin_right = 308.0
+margin_bottom = 83.0
+label = "VERTICAL_VELOCITY"
+suffix = "METERS_PER_SECOND"
+
+[node name="AngleVelocity" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 87.0
+margin_right = 308.0
+margin_bottom = 112.0
+label = "ANGLE_VELOCITY"
+suffix = "RADIAN_PER_SECOND"
+
+[node name="Time" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 116.0
+margin_right = 308.0
+margin_bottom = 141.0
+label = "TIME"
+suffix = "SECONDS"
+
+[node name="Height" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 145.0
+margin_right = 308.0
+margin_bottom = 170.0
+label = "HEIGHT"
+suffix = "METERS"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues"]
+margin_top = 174.0
+margin_right = 308.0
+margin_bottom = 178.0
+
+[node name="VerticalAcceleration" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 182.0
+margin_right = 308.0
+margin_bottom = 207.0
+label = "VERTICAL_ACCELERATION"
+suffix = "METERS_PER_SECOND_2"
+
+[node name="AngleAcceleration" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 211.0
+margin_right = 308.0
+margin_bottom = 236.0
+label = "ANGLE_ACCELERATION"
+suffix = "RADIAN_PER_SECOND_2"
+
+[node name="Period" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/OutputValues" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 240.0
+margin_right = 308.0
+margin_bottom = 265.0
+label = "PERIOD"
+suffix = "SECONDS"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer"]
+margin_top = 381.0
+margin_right = 310.0
+margin_bottom = 754.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2" groups=["translatable"]]
+margin_right = 310.0
+margin_bottom = 27.0
+text = "PLOTS"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2"]
+margin_top = 31.0
+margin_right = 310.0
+margin_bottom = 35.0
+
+[node name="PlotsTabContainer" type="TabContainer" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2"]
+margin_top = 39.0
+margin_right = 310.0
+margin_bottom = 373.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_align = 0
+drag_to_rearrange_enabled = true
+
+[node name="Height" type="Tabs" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer" groups=["translatable"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 34.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 13 )
+tab_name = "HEIGHT"
+
+[node name="ViewportContainer" type="ViewportContainer" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/Height"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/Height/ViewportContainer"]
+size = Vector2( 300, 295 )
+size_override_stretch = true
+handle_input_locally = false
+disable_3d = true
+usage = 0
+render_target_update_mode = 3
+
+[node name="Plot" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/Height/ViewportContainer/Viewport" instance=ExtResource( 12 )]
+auto_y = false
+max_y = 1.0
+max_fun = 0.7
+y_name = "h"
+y_name_suffix = "METERS"
+sig_name = "update_plot_height"
+
+[node name="KinematicEnergy" type="Tabs" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer" groups=["translatable"]]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 34.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 13 )
+tab_name = "KINEMATIC_ENERGY"
+
+[node name="ViewportContainer" type="ViewportContainer" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/KinematicEnergy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/KinematicEnergy/ViewportContainer"]
+size = Vector2( 300, 295 )
+size_override_stretch = true
+handle_input_locally = false
+disable_3d = true
+usage = 0
+render_target_update_mode = 0
+
+[node name="Plot" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/KinematicEnergy/ViewportContainer/Viewport" instance=ExtResource( 12 )]
+max_fun = 15.0
+y_name = "E"
+y_name_suffix = "JOULES"
+sig_name = "update_plot_energy_k"
+
+[node name="PotentialEnergy" type="Tabs" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer" groups=["translatable"]]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 34.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 13 )
+tab_name = "POTENTIAL_ENERGY"
+
+[node name="ViewportContainer" type="ViewportContainer" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/PotentialEnergy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/PotentialEnergy/ViewportContainer"]
+size = Vector2( 300, 295 )
+size_override_stretch = true
+handle_input_locally = false
+disable_3d = true
+usage = 0
+render_target_update_mode = 0
+
+[node name="Plot" parent="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/PotentialEnergy/ViewportContainer/Viewport" instance=ExtResource( 12 )]
+max_fun = 15.0
+y_name = "E"
+y_name_suffix = "JOULES"
+sig_name = "update_plot_energy_p"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/Main/HSplitContainer"]
+margin_left = 318.0
+margin_right = 1290.0
+margin_bottom = 754.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer"]
+margin_right = 704.0
+margin_bottom = 754.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer" groups=["translatable"]]
+margin_right = 704.0
+margin_bottom = 27.0
+text = "VIEWPORT"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer"]
+margin_top = 31.0
+margin_right = 704.0
+margin_bottom = 35.0
+
+[node name="ViewportContainer" type="ViewportContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer"]
+margin_top = 39.0
+margin_right = 704.0
+margin_bottom = 708.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer"]
+size = Vector2( 704, 669 )
+size_override_stretch = true
+handle_input_locally = false
+msaa = 2
+render_target_update_mode = 3
+
+[node name="World" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport" instance=ExtResource( 2 )]
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer"]
+margin_top = 712.0
+margin_right = 704.0
+margin_bottom = 754.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 703.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+
+[node name="ModelRunOptions" type="HBoxContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer"]
+margin_left = 62.0
+margin_right = 639.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 10 )
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="ChangeCameraButton" type="Button" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions" groups=["translatable"]]
+margin_left = 8.0
+margin_right = 113.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 40 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "CAMERA_BTN"
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+margin_left = 117.0
+margin_right = 121.0
+margin_bottom = 40.0
+
+[node name="DropButton" type="Button" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions" groups=["translatable"]]
+margin_left = 125.0
+margin_right = 209.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "DROP_BTN"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+margin_left = 213.0
+margin_right = 217.0
+margin_bottom = 40.0
+
+[node name="StopButton" type="Button" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+visible = false
+margin_left = 221.0
+margin_right = 311.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 90, 40 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+enabled_focus_mode = 0
+text = "||"
+script = ExtResource( 5 )
+
+[node name="ReverseButton" type="Button" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+margin_left = 221.0
+margin_right = 264.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 43, 40 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+text = "◀"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RunButton" type="Button" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+margin_left = 268.0
+margin_right = 311.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 43, 40 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 5 )
+text = "▶"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+margin_left = 315.0
+margin_right = 319.0
+margin_bottom = 40.0
+size_flags_horizontal = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeSpeedSlider" type="HSlider" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+margin_left = 323.0
+margin_right = 523.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 1
+min_value = 0.5
+max_value = 2.0
+step = 0.1
+value = 1.0
+script = ExtResource( 8 )
+
+[node name="TimeSpeedKoef" type="Label" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions"]
+margin_left = 527.0
+margin_top = 6.0
+margin_right = 577.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 50, 0 )
+text = "x1.0"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer"]
+margin_left = 712.0
+margin_right = 972.0
+margin_bottom = 754.0
+rect_min_size = Vector2( 260, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer" groups=["translatable"]]
+margin_right = 260.0
+margin_bottom = 27.0
+text = "INPUT_VALUES"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer"]
+margin_top = 31.0
+margin_right = 260.0
+margin_bottom = 35.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer"]
+margin_top = 39.0
+margin_right = 260.0
+margin_bottom = 754.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer"]
+margin_right = 260.0
+margin_bottom = 715.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 259.0
+margin_bottom = 714.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DiskMass" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 258.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+label_text = "MASS_DISK"
+suffix = "KILOGRAMS"
+range_from = 0.1
+default_value = 0.5
+
+[node name="RollerMass" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 59.0
+margin_right = 258.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+label_text = "MASS_ROLLER"
+suffix = "KILOGRAMS"
+range_from = 0.01
+range_to = 0.2
+range_step = 0.01
+default_value = 0.05
+
+[node name="DiskRadius" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 118.0
+margin_right = 258.0
+margin_bottom = 173.0
+size_flags_horizontal = 3
+label_text = "RADIUS_DISK"
+suffix = "METERS"
+range_from = 0.05
+range_to = 0.15
+range_step = 0.01
+default_value = 0.1
+
+[node name="RollerRadius" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 177.0
+margin_right = 258.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+label_text = "RADIUS_ROLLER"
+suffix = "METERS"
+range_from = 0.002
+range_to = 0.008
+range_step = 0.001
+default_value = 0.005
+
+[node name="MaxHeight" parent="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 236.0
+margin_right = 258.0
+margin_bottom = 291.0
+label_text = "MAX_HEIGHT"
+suffix = "METERS"
+range_from = 0.2
+range_to = 0.7
+range_step = 0.01
+default_value = 0.55
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+margin_top = 800.0
+margin_right = 1300.0
+margin_bottom = 800.0
+
+[node name="Manual" parent="." instance=ExtResource( 14 )]
+margin_left = -350.0
+margin_top = -250.0
+margin_right = 350.0
+margin_bottom = 250.0
+window_title = "Внимание!"
+
+[node name="About" parent="." instance=ExtResource( 16 )]
+window_title = "Внимание!"
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/InstructionsButton" to="Manual" method="_on_InstructionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/InfoButton" to="About" method="_on_InfoButton_pressed"]
+[connection signal="size_changed" from="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/Height/ViewportContainer/Viewport" to="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/Height/ViewportContainer/Viewport/Plot" method="_on_Viewport_size_changed"]
+[connection signal="size_changed" from="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/KinematicEnergy/ViewportContainer/Viewport" to="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/KinematicEnergy/ViewportContainer/Viewport/Plot" method="_on_Viewport_size_changed"]
+[connection signal="size_changed" from="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/PotentialEnergy/ViewportContainer/Viewport" to="VBoxContainer/Main/HSplitContainer/VSplitContainer/VBoxContainer2/PlotsTabContainer/PotentialEnergy/ViewportContainer/Viewport/Plot" method="_on_Viewport_size_changed"]
+[connection signal="mouse_entered" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_ViewportContainer_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_ViewportContainer_mouse_exited"]
+[connection signal="release_stop_btn" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions" method="_on_World_release_stop_btn"]
+[connection signal="pressed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions/ChangeCameraButton" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_ChangeCameraButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions/DropButton" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_DropButton_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions/TimeSpeedSlider" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions/TimeSpeedSlider" method="_on_TimeSpeedSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions/TimeSpeedSlider" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/PanelContainer/CenterContainer/ModelRunOptions/TimeSpeedKoef" method="_on_TimeSpeedSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/DiskMass" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_RollerMass_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/RollerMass" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_RodMass_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/DiskRadius" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_RollerRadius_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/RollerRadius" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_RodRadius_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Main/HSplitContainer/HSplitContainer/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/MaxHeight" to="VBoxContainer/Main/HSplitContainer/HSplitContainer/HBoxContainer/ViewportContainer/Viewport/World" method="_on_MaxHeight_value_changed"]

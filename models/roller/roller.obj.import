@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/roller.obj-2b9ecb2a0546e440b217534348b532ea.mesh"
+
+[deps]
+
+files=[ "res://.import/roller.obj-2b9ecb2a0546e440b217534348b532ea.mesh" ]
+
+source_file="res://models/roller/roller.obj"
+dest_files=[ "res://.import/roller.obj-2b9ecb2a0546e440b217534348b532ea.mesh", "res://.import/roller.obj-2b9ecb2a0546e440b217534348b532ea.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

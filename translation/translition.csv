@@ -1,0 +1,40 @@
+keys,en,ru
+MANUAL_BTN,MANUAL,ИНСТРУКЦИИ
+CHANGE_LANGUAGE_BTN,CHANGE LANGUAGE,СМЕНИТЬ ЯЗЫК
+ABOUT_BTN,ABOUT PROGRAM,О ПРОГРАММЕ
+CALCULATED_VALUES,Calculated values,Расчитанные значения
+VIEWPORT,Viewport,Окно просмотра виртуальной модели
+INPUT_VALUES,Input values,Входные значения
+PLOTS,Plots,Графики
+KINEMATIC_ENERGY,Kin. energy,Кин. энергия
+POTENTIAL_ENERGY,Pot. energy,Пот. энергия
+VERTICAL_VELOCITY,Vert. velocity,Верт. скорость
+ANGLE_VELOCITY,Angle velocity,Угл. скорость
+TIME,Time,Время
+HEIGHT,Height,Высота
+VERTICAL_ACCELERATION,Vert. acceleration,Верт. ускорение
+ANGLE_ACCELERATION,Angle acceleration,Угл. ускорение
+PERIOD,Period,Период
+JOULES,J,Дж
+METERS,m,м
+METERS_PER_SECOND,m/s,м/с
+METERS_PER_SECOND_2,m/s²,м/с²
+RADIAN_PER_SECOND,rad/s,рад/с
+RADIAN_PER_SECOND_2,rad/s²,рад/с²
+SECONDS,s,с
+MASS_DISK,Disk mass,Масса диска
+MASS_ROLLER,Roller mass,Масса вала
+RADIUS_DISK,Disk radius,Радиус диска
+RADIUS_ROLLER,Roller radius,Радиус вала
+MAX_HEIGHT,Max height,Макс. высота
+CAMERA_BTN,Camera,Камера
+DROP_BTN,Drop,Сброс
+MANUAL_TEXT_1,"The program interface represents the Maxwell’s Wheel can be spliited into 5 sections: top panel, calculated values, plots, viewport input values.","Интерфейс программы, воссоздающей модель маятника Максвелла, можно разделить на 5 секций: верхняя панель, расчитанные значения, графики, окно просмотра виртуальной модели, вводимые значения."
+MANUAL_TEXT_2,"The top panel includes 3 buttons: open the program manual, change language (ru/en), open the information about the program and its authors.","Верхняя панель включает в себя 3 кнопки: открыие инструкций по пользованию программой, смена языка (рус./англ.), открытие информации о программе и её авторах."
+MANUAL_TEXT_3,"The area of calculated values consists of two groups. The first (upper) group contains values that change over time, and the second (lower) group contains values that change only when the input data is updated.","Область рассчитанных значений состоит из двух групп. В первую (верхнюю) группу входят значения, изменяющиейся с течением времени, а во вторую (нижнюю) входят значения, изменяющиеся только при обновлении входных данных."
+MANUAL_TEXT_4,The plots area consists of several tabs with the function of different parameters and time.,Область графиков состоит из нескольких вкладок с зависимостями разных параметров от времени.
+MANUAL_TEXT_5,"The viewport area consists of a visual representation of the Maxwell’s Wheel and a panel controlling the viewing and running of the experiment. The bottom panel has buttons for: changing the camera view mode (perspective, ortographic), resetting the model to initial values, running the process in normal/reversed mode, stopping the process (this button appears only after starting the process), controlling the speed of the experiment.","Область просмотра состоит из визуального представления маятника Максвелла и панели, управляющей просмотром и протеканием эксперимента. В нижней панели есть кнопки, отвечающие за: смену режима просмотра камеры (перспективная, ортоганализирующая), сброс модели к начальным значениям, запуск модели в обычном/реверсированном режиме, остановка модели (эта кнопка появляется только после запуска модели), регулирование быстроты протекания эксперемента."
+MANUAL_TEXT_6,"In the input panel you can change some parameters of the virtual model. If any of the parameters are changed, the physical process will stop and reset to the initial values.",В панеле вводимых значений можно изменять некторые параметры виртуальной модели. При изменинии какого-либо из параметров физический процесс останавливается и сбрасыватся к начальным значениям. 
+ABOUT_TEXT_1,The formula describing the physical process was derived by Sergey Neretin. The program product was developed by Begichev Alexander.,"Вывод формулы, описывающий физический процесс, был произведён Неретиным Сергеем. Программный продукт был разработан Бегичевым Александром."
+KILOGRAMS,kg,кг
+MAXWELLS_WHEEL,Maxwell’s Wheel,Маятник Максвелла

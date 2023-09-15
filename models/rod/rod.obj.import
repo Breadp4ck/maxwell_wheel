@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rod.obj-fc92fc515ebaf99f4a94d46c2bfc9c3b.mesh"
+
+[deps]
+
+files=[ "res://.import/rod.obj-fc92fc515ebaf99f4a94d46c2bfc9c3b.mesh" ]
+
+source_file="res://models/rod/rod.obj"
+dest_files=[ "res://.import/rod.obj-fc92fc515ebaf99f4a94d46c2bfc9c3b.mesh", "res://.import/rod.obj-fc92fc515ebaf99f4a94d46c2bfc9c3b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
